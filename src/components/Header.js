@@ -60,13 +60,13 @@ const Header = () => {
       </nav>
       <div className="container">
         <div className="header-text">
-          <h1>
+          <h2>
             Hi, I am <span>Roshani</span><br />
             and I am a passionate
-          </h1>
-          <h1>
+          </h2>
+          <h2>
             <span id="element" ref={typedElement}></span>
-          </h1>
+          </h2>
         </div>
       </div>
     </div>

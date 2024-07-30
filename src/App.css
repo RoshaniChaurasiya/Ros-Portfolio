@@ -35,7 +35,7 @@ body {
   max-width: 80%;
 }
 
-.header-text h1 {
+.header-text h2 {
   font-size: 36px;
   margin: 0;
   color: #2dfc34;
@@ -97,12 +97,12 @@ nav ul li a:hover::after {
   padding: 10px;
 }
 
-.header-text h1 {
+.header-text h2 {
   font-size: 60px;
   margin-top: 20px;
 }
 
-.header-text h1 span {
+.header-text h2 span {
   color: #ddd;
 }
 
@@ -121,14 +121,14 @@ nav ul li a:hover::after {
 }
 
 .about-col-1 {
-  flex-basis: 35%;
+  flex-basis: 30%;
 }
 
 .about-col-1 img {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 50%;
   height: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
 }
 
 .about-col-2 {
@@ -224,7 +224,7 @@ nav ul li a:hover::after {
 
 .services-list div i {
   font-size: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   color: #77f86e;
 }
 
@@ -238,14 +238,6 @@ nav ul li a:hover::after {
 .services-list div p {
   font-size: 16px;
   line-height: 1.6;
-}
-
-.services-list div a {
-  text-decoration: none;
-  font-size: 14px;
-  margin-top: 20px;
-  display: inline-block;
-  transition: color 0.3s ease;
 }
 
 .services-list div:hover {
@@ -468,7 +460,7 @@ nav .fa-solid {
 /* Small Screen Styles */
 @media only screen and (max-width: 600px) {
   #header {
-    height: auto;
+    height: 50vh;
   }
 
   .header-text {
@@ -476,8 +468,8 @@ nav .fa-solid {
     padding: 15px;
   }
 
-  .header-text h1 {
-    font-size: 28px;
+  .header-text h2 {
+    font-size: 25px;
   }
 
 
@@ -515,7 +507,7 @@ nav .fa-solid {
   .sub-title-services,
   .sub-title-portfolio,
   .sub-title-contact {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .about-col-1,
@@ -545,6 +537,22 @@ nav .fa-solid {
     margin: 25px auto;
     text-align: center;
     font-size: 17px;
+  }
+
+  .services-list div h2 {
+    font-size: 20px;
+  }
+  
+  .services-list div p {
+    font-size: 14px;   
+  }
+
+  .services-list div i{
+    font-size: 40px;
+  }
+
+  .portfolio-text {
+    font-size: 12px;
   }
 
   .contact-left p {
