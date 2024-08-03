@@ -29,16 +29,23 @@ body {
 }
 
 .header-text {
-  background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+  width: 80%;
+  color: #2dfc34;
+  font-size: 30px;
+  background: #0f0d0d;
+  border-radius: 10px;
+  margin: 14% 12%;
+  opacity: 0.8;
   padding: 20px;
-  border-radius: 8px;
-  max-width: 80%;
 }
 
 .header-text h2 {
-  font-size: 36px;
-  margin: 0;
-  color: #2dfc34;
+  font-size: 60px;
+}
+
+.header-text h2 span {
+  color: #ddd;
 }
 
 nav {
@@ -83,27 +90,6 @@ nav ul li a::after {
 nav ul li a:hover::after {
   width: 100%;
   color: #1ebe5b;
-}
-
-.header-text {
-  text-align: center;
-  width: 70%;
-  color: #2dfc34;
-  font-size: 30px;
-  background: #0f0d0d;
-  border-radius: 10px;
-  margin: 14% 12%;
-  opacity: 0.8;
-  padding: 10px;
-}
-
-.header-text h2 {
-  font-size: 60px;
-  margin-top: 20px;
-}
-
-.header-text h2 span {
-  color: #ddd;
 }
 
 
@@ -466,12 +452,16 @@ nav .fa-solid {
   .header-text {
     width: 100%;
     padding: 15px;
+    margin: 29% 0;
   }
 
   .header-text h2 {
     font-size: 25px;
   }
 
+  .logo{
+    width: 20%;
+  }
 
   nav .fa-solid {
     display: block;
@@ -517,6 +507,13 @@ nav .fa-solid {
 
   .about-col-1 {
     margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .about-col-1 img{
+    width: 70%;    
   }
 
   .about-col-2 {
