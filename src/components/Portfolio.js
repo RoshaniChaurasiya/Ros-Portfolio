@@ -16,17 +16,6 @@ const Portfolio = () => {
         <p className="portfolio-text">(Please go to the image then click on the icon so you can see the project.)</p>
         <div className="work-list">
           <div className="work">
-            <img src={Ucode} alt='Ucode' />
-            <div className="layer">
-              <h3>Ucode Project</h3>
-              <p>
-                Kids participate in live online lessons, interacting in real
-                time with an experienced teacher and a small group of students.
-              </p>
-              <a href="https://ucode.com"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div className="work">
             <img src={Home} alt='Home' />
             <div className="layer">
               <h3>Curry Cares Project</h3>
@@ -35,6 +24,17 @@ const Portfolio = () => {
                 families that have fallen on hard times the new roof they need.
               </p>
               <a href="https://currycares.com"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div className="work">
+            <img src={Ucode} alt='Ucode' />
+            <div className="layer">
+              <h3>Ucode Project</h3>
+              <p>
+                Kids participate in live online lessons, interacting in real
+                time with an experienced teacher and a small group of students.
+              </p>
+              <a href="https://ucode.com"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
           </div>
           <div className="work">
