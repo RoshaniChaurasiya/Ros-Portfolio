@@ -26,6 +26,7 @@ body {
   background-image: url(Images/Banner.jpg);
   background-size: cover;
   background-position: center;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .header-text {
@@ -38,6 +39,7 @@ body {
   margin: 14% 12%;
   opacity: 0.8;
   padding: 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .header-text h2 {
@@ -104,6 +106,7 @@ nav ul li a:hover::after {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .about-col-1 {
@@ -119,6 +122,7 @@ nav ul li a:hover::after {
 
 .about-col-2 {
   flex-basis: 60%;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .sub-title-about {
@@ -181,6 +185,8 @@ nav ul li a:hover::after {
 #services {
   padding: 50px 0;
   background-color: #ddd;
+  animation: fadeIn 2s ease-in-out;
+
 }
 
 .sub-title-services {
@@ -196,6 +202,8 @@ nav ul li a:hover::after {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-gap: 40px;
   margin-top: 50px;
+  animation: fadeIn 2s ease-in-out;
+
 }
 
 .services-list div {
@@ -204,7 +212,7 @@ nav ul li a:hover::after {
   font-size: 15px;
   font-weight: 300;
   border-radius: 15px;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -229,7 +237,7 @@ nav ul li a:hover::after {
 .services-list div:hover {
   background: #77f86e;
   color: #333;
-  transform: translateY(-10px);
+  transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -243,6 +251,7 @@ nav ul li a:hover::after {
 #portfolio {
   padding: 50px 0;
   background-color: #333;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .sub-title-portfolio {
@@ -269,13 +278,15 @@ nav ul li a:hover::after {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 2s ease-in-out;
+
 }
 
 .work img {
   width: 100%;
   border-radius: 10px;
   display: block;
-  transition: 0.5s;
+  transition: transform 0.5s ease;
   height: 32vh;
 }
 
@@ -329,6 +340,7 @@ nav ul li a:hover::after {
 /* Contact Section */
 #contact {
   background: #ddd;
+  animation:   fadeIn 2s ease-in-out;
 }
 
 .row {
@@ -337,6 +349,7 @@ nav ul li a:hover::after {
 
 .contact-left {
   flex-basis: 35%;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .sub-title-contact {
@@ -348,6 +361,7 @@ nav ul li a:hover::after {
 
 .contact-right {
   flex-basis: 60%;
+  animation: fadeIn 2s ease-in-out;
 }
 
 .contact-left p {
@@ -384,6 +398,16 @@ nav ul li a:hover::after {
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .btn.btn2:hover {
@@ -441,6 +465,17 @@ nav .fa-solid {
   background-color: #77f86e;
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Small Screen Styles */
