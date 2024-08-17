@@ -1,20 +1,44 @@
 // src/App.js
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import Header from './components/Header';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
+import { useInView } from 'react-intersection-observer';
 import './App.css'; 
+
+// Lazy load components
+const About = lazy(() => import('./components/About'));
+const Services = lazy(() => import('./components/Services'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Contact = lazy(() => import('./components/Contact'));
+
+const SectionLoader = ({ component: Component }) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.25, // Load the component when 25% is in view
+  });
+
+  return (
+    <div ref={ref} style={{ minHeight: '10vh' }}>
+      {inView ? <Component /> : null}
+    </div>
+  );
+};
 
 const App = () => {
   return (
     <div>
       <Header />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
+      <Suspense fallback={<div>Loading About...</div>}>
+        <SectionLoader component={About} />
+      </Suspense>
+      <Suspense fallback={<div>Loading Services...</div>}>
+        <SectionLoader component={Services} />
+      </Suspense>
+      <Suspense fallback={<div>Loading Portfolio...</div>}>
+        <SectionLoader component={Portfolio} />
+      </Suspense>
+      <Suspense fallback={<div>Loading Contact...</div>}>
+        <SectionLoader component={Contact} />
+      </Suspense>
     </div>
   );
 };

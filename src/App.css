@@ -398,6 +398,9 @@ nav ul li a:hover::after {
   font-size: 20px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-left .btn.btn2{
   animation: pulse 2s infinite;
 }
 
