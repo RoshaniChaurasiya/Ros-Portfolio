@@ -13,7 +13,7 @@ const Contact = lazy(() => import('./components/Contact'));
 const SectionLoader = ({ component: Component }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.25, // Load the component when 25% is in view
+    threshold: 0.30, // Load the component when 25% is in view
   });
 
   return (
@@ -27,16 +27,16 @@ const App = () => {
   return (
     <div>
       <Header />
-      <Suspense fallback={<div>Loading About...</div>}>
+      <Suspense fallback={<div></div>}>
         <SectionLoader component={About} />
       </Suspense>
-      <Suspense fallback={<div>Loading Services...</div>}>
+      <Suspense fallback={<div></div>}>
         <SectionLoader component={Services} />
       </Suspense>
-      <Suspense fallback={<div>Loading Portfolio...</div>}>
+      <Suspense fallback={<div></div>}>
         <SectionLoader component={Portfolio} />
       </Suspense>
-      <Suspense fallback={<div>Loading Contact...</div>}>
+      <Suspense fallback={<div></div>}>
         <SectionLoader component={Contact} />
       </Suspense>
     </div>
