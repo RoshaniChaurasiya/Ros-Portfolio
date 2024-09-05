@@ -17,6 +17,8 @@ const Header = () => {
       ],
       typeSpeed: 90,
       startDelay: 300,
+      backSpeed: 50,
+      loop: true,
       onStart: () => {
         if (typedElement.current) {
           typedElement.current.style.visibility = 'visible';
