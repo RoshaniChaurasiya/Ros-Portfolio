@@ -21,7 +21,7 @@ const About = () => {
             <h1 className="sub-title-about">About Me</h1>
             <ul>
               <li>I specialize in frontend development, particularly focusing on React to create seamless and visually captivating user interfaces.</li>
-              <li>With a solid foundation in HTML, CSS, and JavaScript, I take pride in crafting elegant and efficient solutions for web applications.</li>
+              <li>With a solid foundation in HTML, CSS and JavaScript. I take pride in crafting elegant and efficient solutions for web applications.</li>
               <li>Continuously staying abreast of emerging technologies and industry best practices, I am committed to delivering high-quality work that exceeds expectations.</li>
               <li>My goal is to contribute my expertise to projects that not only meet but surpass user needs, elevating the standards of frontend development in the process.</li>
             </ul>
@@ -39,7 +39,7 @@ const About = () => {
                 <li>CSS <span>- Styling and layout for web pages</span></li>
                 <li>Bootstrap <span>- CSS framework for responsive design</span></li>
                 <li>Material-UI <span>- React components for faster and easier web development</span></li>
-                <li>Git <span>- Version control system for tracking changes in source code</span></li>
+                <li>Angular <span>- Framework for building single-page applications</span></li>
               </ul>
             </div>
 

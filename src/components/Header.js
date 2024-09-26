@@ -10,8 +10,8 @@ const Header = () => {
     const options = {
       strings: [
         "Software Developer",
-        "React Developer",
         "Frontend Developer",
+        "React Developer",
         "UI Developer",
         "HTML Developer",
       ],
