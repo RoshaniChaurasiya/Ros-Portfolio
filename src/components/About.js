@@ -44,9 +44,11 @@ const About = () => {
             </div>
 
             <div className="tab-contents" id="experience">
+            <ul>
+            <li><span>10/2024 - Present</span><br />Mayu Technologies - Web Developer</li>
+            </ul>
               <ul>
-                <li><span>2022 - Present</span><br />Nextpage IT Solutions Pvt Ltd. - React Developer</li>
-                <li><span>2022 - 2022</span><br />Function Up</li>
+                <li><span>12/2022 - 06/2024</span><br />Nextpage IT Solutions Pvt Ltd. - React Developer</li>
               </ul>
             </div>
             <div className="tab-contents" id="education">
