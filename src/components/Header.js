@@ -1,13 +1,13 @@
-// src/components/Header.js
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Typed from 'typed.js';
 import Logo from '../Images/logo.jpeg';
 
 const Header = () => {
   const typedElement = useRef(null);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const options = {
+    const typed = new Typed(typedElement.current, {
       strings: [
         "Software Developer",
         "Frontend Developer",
@@ -19,59 +19,82 @@ const Header = () => {
       startDelay: 300,
       backSpeed: 50,
       loop: true,
-      onStart: () => {
-        if (typedElement.current) {
-          typedElement.current.style.visibility = 'visible';
-        }
-      },
-      onComplete: () => {
-        if (typedElement.current) {
-          typedElement.current.style.visibility = 'visible';
-        }
-      },
-    };
-
-    const typed = new Typed(typedElement.current, options);
+    });
 
     return () => {
       typed.destroy();
     };
   }, []);
 
-  const openmenu = () => {
-    document.getElementById("sidemenu").style.right = "0";
-  };
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : 'auto';
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [menuOpen]);
 
-  const closemenu = () => {
-    document.getElementById("sidemenu").style.right = "-200px";
+  const openmenu = () => setMenuOpen(true);
+  const closemenu = () => setMenuOpen(false);
+
+  const handleKeyDown = (e, action) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      action();
+    }
   };
 
   return (
-    <div id="header">
-      <nav className="nav">
+    <header id="header">
+      <nav aria-label="Primary navigation" className="nav">
         <img src={Logo} className="logo" alt="Logo" />
-        <ul id="sidemenu">
-          <li><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <i className="fa-solid fa-circle-xmark" onClick={closemenu}></i>
+
+        <ul
+          id="sidemenu"
+          className={menuOpen ? "open" : ""}
+          role="menu"
+          aria-expanded={menuOpen}
+        >
+          <li><a href="#header" onClick={closemenu} role="menuitem">Home</a></li>
+          <li><a href="#about" onClick={closemenu} role="menuitem">About</a></li>
+          <li><a href="#services" onClick={closemenu} role="menuitem">Services</a></li>
+          <li><a href="#portfolio" onClick={closemenu} role="menuitem">Portfolio</a></li>
+          <li><a href="#contact" onClick={closemenu} role="menuitem">Contact</a></li>
+
+          <i
+            className="fa-solid fa-circle-xmark menu-icon close-icon"
+            onClick={closemenu}
+            onKeyDown={e => handleKeyDown(e, closemenu)}
+            role="button"
+            tabIndex="0"
+            aria-label="Close menu"
+          ></i>
         </ul>
-        <i className="fa-solid fa-bars" onClick={openmenu}></i>
+
+        {!menuOpen && (
+          <i
+            className="fa-solid fa-bars menu-icon open-icon"
+            onClick={openmenu}
+            onKeyDown={e => handleKeyDown(e, openmenu)}
+            role="button"
+            tabIndex="0"
+            aria-label="Open menu"
+            aria-haspopup="true"
+            aria-expanded={menuOpen}
+          ></i>
+        )}
       </nav>
+
       <div className="container">
-        <div className="header-text">
-          <h2>
-            Hi, I am <span>Roshani</span><br />
-            and I am a passionate
-          </h2>
-          <h2>
-            <span id="element" ref={typedElement}></span>
+        <div className="header-content">
+          <h1>
+            Hi, I am <span className="name-highlight">Roshani</span>
+          </h1>
+          <h2 className="typed-intro">
+            and I am a <span ref={typedElement} id="element"></span>
           </h2>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

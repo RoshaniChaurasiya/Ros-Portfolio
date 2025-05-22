@@ -1,93 +1,80 @@
 // src/components/Portfolio.js
 import React from 'react';
 import Ucode from '../Images/Ucode.jpg';
-import Home from '../Images/Home.jpg'
-import Shopping from '../Images/Shopping.jpg'
-import Weather from '../Images/Weather.jpg'
-import Tic from '../Images/Tic-tac.jpg'
-import Note from '../Images/notes.jpg'
+import Home from '../Images/Home.jpg';
+import Shopping from '../Images/Shopping.jpg';
+import Weather from '../Images/Weather.jpg';
+import Tic from '../Images/Tic-tac.jpg';
+import Note from '../Images/notes.jpg';
 
+const projects = [
+  {
+    image: Ucode,
+    alt: 'Pearl Academy Project',
+    title: 'Pearl Academy Project',
+    description: 'Students participate in live online lessons, interacting in real time with experienced teachers and peers.',
+    link: 'https://www.pearlacademy.com/',
+  },
+  {
+    image: Home,
+    alt: 'Curry Cares Project',
+    title: 'Curry Cares Project',
+    description: 'A program by Roofing by Curry that provides families in need with a new roof.',
+    link: 'https://currycares.com',
+  },
+  {
+    image: Note,
+    alt: 'Backlinks Project',
+    title: 'Backlinks',
+    description: 'A platform for digital marketers to exchange backlinks and improve SEO.',
+    link: 'https://www.backlinkexchange.com/',
+  },
+  {
+    image: Weather,
+    alt: 'Weather App',
+    title: 'Weather App',
+    description: 'Real-time forecasts, current temperatures, and weather alerts.',
+    link: 'https://apps-weathers.netlify.app/',
+  },
+  {
+    image: Tic,
+    alt: 'Tic Tac Toe Game',
+    title: 'Tic Tac Toe Game',
+    description: 'A modern interface for the classic game — play with friends or improve your strategy.',
+    link: 'https://ros-tic-tac-toe.netlify.app/',
+  },
+  {
+    image: Shopping,
+    alt: 'E-Commerce ShopEase',
+    title: 'E-Commerce ShopEase',
+    description: 'Browse a wide product range, enjoy secure payments, and get fast delivery.',
+    link: 'https://18-shop-ease.netlify.app/',
+  },
+];
 
 const Portfolio = () => {
   return (
-    <div id="portfolio">
+    <section id="portfolio" className="portfolio-section">
       <div className="container">
         <h1 className="sub-title-portfolio">My Work</h1>
-        <p className="portfolio-text">(Please go to the image then click on the icon so you can see the project.)</p>
+        <p className="portfolio-text">(Hover over any project and click the icon to view the live demo.)</p>
+
         <div className="work-list">
-        <div className="work">
-            <img src={Ucode} alt='Ucode' />
-            <div className="layer">
-              <h3>Pearl Academy Project</h3>
-              <p>
-                Student participate in live online lessons, interacting in real
-                time with an experienced teacher and a small group of students.
-              </p>
-              <a href="https://www.pearlacademy.com/"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div className="work">
-            <img src={Home} alt='Home' />
-            <div className="layer">
-              <h3>Curry Cares Project</h3>
-              <p>
-                Curry Cares! is a program created by Roofing by Curry to provide
-                families that have fallen on hard times the new roof they need.
-              </p>
-              <a href="https://currycares.com"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div className="work">
-            <img src={Shopping} alt='Shop' />
-            <div className="layer">
-              <h3>E-Commerce ShopEase</h3>
-              <p>
-                Discover a seamless shopping experience with ShopEase. Explore a wide range
-                of products, enjoy secure transactions, and benefit from fast delivery.
-              </p>
-              <a href="https://18-shop-ease.netlify.app/"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div className="work">
-            <img src={Weather} alt='Weather' />
-            <div className="layer">
-              <h3>Weather App</h3>
-              <p>
-                Stay updated with the latest weather conditions using my Weather
-                App. Get real-time forecasts, current temperatures, and ensuring
-                you're always prepared for what's ahead.
-              </p>
-              <a href="https://apps-weathers.netlify.app/"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
-          <div className="work">
-            <img src={Tic} alt='Tic-Tac' />
-            <div className="layer">
-              <h3>Tic Tac Toe Game</h3>
-              <p>
-                Designed with a sleek, modern interface, this project highlights
-                the ease and enjoyment of a classic game. Whether you're playing
-                against friends or honing your strategy.
-              </p>
-              <a href="https://ros-tic-tac-toe.netlify.app/">
-                <i className="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-          <div className="work">
-            <img src={Note} alt='Notes' />
-            <div className="layer">
-              <h3>My Notes</h3>
-              <p>
-                My Notes is your digital notebook, perfect for jotting down ideas,
-                organizing tasks, and keeping track of important information.
-              </p>
-              <a href="https://task-todos-rns.netlify.app/"><i className="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-          </div>
+          {projects.map((project, index) => (
+            <figure key={index} className="work">
+              <img src={project.image} alt={project.alt} />
+              <figcaption className="layer">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

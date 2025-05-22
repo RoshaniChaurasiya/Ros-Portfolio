@@ -1,67 +1,110 @@
-// src/components/About.js
-import React from 'react';
-import aboutImg from '../Images/About.jpg'
+import React, { useState } from 'react';
+import aboutImg from '../Images/About.jpg';
 
 const About = () => {
-  const openTab = (event, tabname) => {
-    document.querySelectorAll('.tab-links').forEach(tablink => tablink.classList.remove('active-link'));
-    document.querySelectorAll('.tab-contents').forEach(tabcontent => tabcontent.classList.remove('active-tab'));
-    document.getElementById(tabname).classList.add('active-tab');
-    event.currentTarget.classList.add('active-link');
-  };
+  const [activeTab, setActiveTab] = useState('skills');
+
+  const skills = [
+    'React.js', 'Next.js', 'JavaScript', 'Wix Velo',
+    'HTML5', 'CSS3/SCSS', 'Bootstrap & Material UI', 'Git/GitLab'
+  ];
 
   return (
-    <div id="about">
+    <section id="about" className="about-section">
       <div className="container">
         <div className="row">
           <div className="about-col-1">
-            <img src={aboutImg} alt="About" />
+            <img src={aboutImg} alt="Roshani Chaurasiya" className="about-img" />
           </div>
+
           <div className="about-col-2">
             <h1 className="sub-title-about">About Me</h1>
-            <ul>
-              <li>I specialize in frontend development, particularly focusing on React to create seamless and visually captivating user interfaces.</li>
-              <li>With a solid foundation in HTML, CSS and JavaScript. I take pride in crafting elegant and efficient solutions for web applications.</li>
-              <li>Continuously staying abreast of emerging technologies and industry best practices, I am committed to delivering high-quality work that exceeds expectations.</li>
-              <li>My goal is to contribute my expertise to projects that not only meet but surpass user needs, elevating the standards of frontend development in the process.</li>
+            <ul className="about-list">
+              <li><strong>I’m Roshani Chaurasiya</strong>, a dedicated Frontend Developer with 2+ years of experience building interactive, high-performance web applications.</li>
+              <li>Proficient in frameworks like React.js & Next.js, with focus on clean code and SSR/SSG optimization.</li>
+              <li>Skilled in integrating RESTful APIs and collaborating with backend teams for data-driven features.</li>
+              <li>Continuously learning web technologies, performance optimization, and accessibility practices.</li>
             </ul>
 
-            <div className="tab-titles">
-              <p className="tab-links active-link" onClick={(e) => openTab(e, 'skills')}>Skills</p>
-              <p className="tab-links" onClick={(e) => openTab(e, 'experience')}>Experience</p>
-              <p className="tab-links" onClick={(e) => openTab(e, 'education')}>Education</p>
+            <div className="tab-titles" role="tablist" aria-label="About section tabs">
+              <button
+                className={`tab-links ${activeTab === 'skills' ? 'active-link' : ''}`}
+                onClick={() => setActiveTab('skills')}
+                role="tab"
+                aria-selected={activeTab === 'skills'}
+                aria-controls="skills"
+                id="tab-skills"
+              >
+                Skills
+              </button>
+
+              <button
+                className={`tab-links ${activeTab === 'experience' ? 'active-link' : ''}`}
+                onClick={() => setActiveTab('experience')}
+                role="tab"
+                aria-selected={activeTab === 'experience'}
+                aria-controls="experience"
+                id="tab-experience"
+              >
+                Experience
+              </button>
+
+              <button
+                className={`tab-links ${activeTab === 'education' ? 'active-link' : ''}`}
+                onClick={() => setActiveTab('education')}
+                role="tab"
+                aria-selected={activeTab === 'education'}
+                aria-controls="education"
+                id="tab-education"
+              >
+                Education
+              </button>
             </div>
-            <div className="tab-contents active-tab" id="skills">
-              <ul>
-                <li>JavaScript <span>- Dynamic behavior and interactivity</span></li>
-                <li>React <span>- Component-based UI development</span></li>
-                <li>Next.js <span>- React framework for server-side rendering</span></li>
-                <li>CSS <span>- Styling and layout for web pages</span></li>
-                <li>Bootstrap <span>- CSS framework for responsive design</span></li>
-                <li>Material-UI <span>- React components for faster and easier web development</span></li>
-                <li>Angular <span>- Framework for building single-page applications</span></li>
+
+            <div
+              className={`tab-contents ${activeTab === 'skills' ? 'active-tab' : ''}`}
+              id="skills"
+              role="tabpanel"
+              aria-labelledby="tab-skills"
+              hidden={activeTab !== 'skills'}
+            >
+              <div className="skills-grid">
+                {skills.map(skill => (
+                  <span key={skill} className="skill-pill">{skill}</span>
+                ))}
+              </div>
+            </div>
+
+            <div
+              className={`tab-contents ${activeTab === 'experience' ? 'active-tab' : ''}`}
+              id="experience"
+              role="tabpanel"
+              aria-labelledby="tab-experience"
+              hidden={activeTab !== 'experience'}
+            >
+              <ul className="experience-list">
+                <li><span>Jun 2024 - Present</span><br />Mayu Technologies - Web Developer</li>
+                <li><span>Dec 2022 - Jun 2024</span><br />Nextpage IT Solutions Pvt Ltd. - React Developer</li>
               </ul>
             </div>
 
-            <div className="tab-contents" id="experience">
-            <ul>
-            <li><span>10/2024 - Present</span><br />Mayu Technologies - Web Developer</li>
-            </ul>
-              <ul>
-                <li><span>12/2022 - 06/2024</span><br />Nextpage IT Solutions Pvt Ltd. - React Developer</li>
-              </ul>
-            </div>
-            <div className="tab-contents" id="education">
-              <ul>
-                <li><span>2018 - 2021</span><br />B.Sc - Udai Pratap College</li>
-                <li><span>2017 - 2018</span><br />XII - State Board</li>
-                <li><span>2015 - 2016</span><br />X - State Board</li>
+            <div
+              className={`tab-contents ${activeTab === 'education' ? 'active-tab' : ''}`}
+              id="education"
+              role="tabpanel"
+              aria-labelledby="tab-education"
+              hidden={activeTab !== 'education'}
+            >
+              <ul className="education-list">
+                <li><span>2018 - 2021</span><br />B.Sc in Computer Science, Udai Pratap College</li>
+                <li><span>2017 - 2018</span><br />Senior Secondary (XII), Saraswati Vidya Mandir Inter College</li>
+                <li><span>2015 - 2016</span><br />Higher Secondary (X), Saraswati Vidya Mandir Inter College</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

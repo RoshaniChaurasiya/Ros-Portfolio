@@ -25,7 +25,7 @@ const SectionLoader = ({ component: Component }) => {
 
 const App = () => {
   return (
-    <div>
+    <>
       <Header />
       <Suspense fallback={<div></div>}>
         <SectionLoader component={About} />
@@ -39,7 +39,7 @@ const App = () => {
       <Suspense fallback={<div></div>}>
         <SectionLoader component={Contact} />
       </Suspense>
-    </div>
+    </>
   );
 };
 
