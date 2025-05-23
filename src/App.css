@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #3a8dde, #06beb6);
   color: #fff;
-}
+    overflow-x: hidden;}
 
 /* Header & Nav */
 #header {
@@ -19,6 +19,9 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   z-index: 100;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;    
 }
 
 .nav {
@@ -76,6 +79,8 @@ body {
   margin: 80px auto 40px;
   padding: 0 20px;
   text-align: center;
+  box-sizing: border-box;
+  width: 100%;  
 }
 
 .header-content h1 {
@@ -670,7 +675,7 @@ body {
 
 .contact-left p {
   font-size: 1rem;
-  margin: 14px 0;
+  margin: 18px 0;
   display: flex;
   align-items: center;
   gap: 12px;
