@@ -5,7 +5,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
 
   const skills = [
-    "JavaScript", "React.js", "Next.js", "Redux", " HTML5", "CSS3", "SCSS", "Bootstrap", "Material UI", "REST APIs", "Git", "Responsive Design"
+    "JavaScript", "React.js", "API",  "Redux", "Next.js", " HTML5", "CSS3", "SCSS", "Bootstrap", "Material UI", "Git", "Responsive Design"
   ];
 
   return (
@@ -19,8 +19,8 @@ const About = () => {
           <div className="about-col-2">
             <h1 className="sub-title-about">About Me</h1>
             <ul className="about-list">
-              <li><strong>I’m Roshani Chaurasiya</strong>, a dedicated Frontend Developer with 2+ years of experience building interactive, high-performance web applications.</li>
-              <li>Proficient in frameworks like React.js & Next.js, with focus on clean code and SSR/SSG optimization.</li>
+              <li><strong>I’m Roshani Chaurasiya</strong>, a dedicated Frontend Developer with 2 years of experience building interactive, high-performance web applications.</li>
+              <li>Proficient in frameworks like React.js & Next.js, with focus on clean code and SSR optimization.</li>
               <li>Skilled in integrating RESTful APIs and collaborating with backend teams for data-driven features.</li>
               <li>Continuously learning web technologies, performance optimization, and accessibility practices.</li>
             </ul>
