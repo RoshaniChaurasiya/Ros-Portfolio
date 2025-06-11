@@ -1,4 +1,3 @@
-/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +8,8 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #3a8dde, #06beb6);
   color: #fff;
-    overflow-x: hidden;}
+  overflow-x: hidden;
+}
 
 /* Header & Nav */
 #header {
@@ -19,9 +19,7 @@ body {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   z-index: 100;
-  box-sizing: border-box;
   width: 100%;
-  max-width: 100vw;    
 }
 
 .nav {
@@ -30,7 +28,6 @@ body {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
 }
 
 .logo {
@@ -44,72 +41,52 @@ body {
   transform: scale(1.1);
 }
 
-/* Navigation Menu - Desktop default */
 #sidemenu {
   display: flex;
-  flex-direction: row;
   list-style: none;
   gap: 25px;
   font-weight: 600;
-  font-size: 1rem;
 }
 
 #sidemenu li a {
   color: #fff;
   text-decoration: none;
   padding: 8px 12px;
-  display: block;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 #sidemenu li a:hover {
-  background: #1e90ff;
-  color: #fff;
+  background: #005f8a;
 }
 
-.close-icon,
-.open-icon {
+.open-icon,
+.close-icon {
   display: none;
 }
 
-/* Header content container */
 .container {
   max-width: 900px;
   margin: 80px auto 40px;
   padding: 0 20px;
   text-align: center;
-  box-sizing: border-box;
-  width: 100%;  
 }
 
 .header-content h1 {
   font-size: 3.2rem;
-  font-weight: 700;
   margin-bottom: 15px;
-  letter-spacing: 1.5px;
-  color: #fff;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .name-highlight {
   color: #ffd700;
   text-shadow: 0 0 8px #ffd700;
-  transition: color 0.4s ease;
-}
-
-.name-highlight:hover {
-  color: #ffa500;
-  cursor: pointer;
 }
 
 .typed-intro {
   font-size: 1.8rem;
-  font-weight: 600;
   margin-top: 5px;
   min-height: 2.5rem;
-  color: #eee;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Animation */
@@ -126,29 +103,28 @@ body {
   }
 }
 
-/* ===================== */
-/* MOBILE RESPONSIVE CSS */
-/* ===================== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1500;
+}
 
+/* MOBILE */
 @media (max-width: 768px) {
-  /* Make hamburger icon visible */
   .open-icon {
     display: block;
     font-size: 28px;
     cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease;
   }
 
-  .open-icon:hover {
-    color: #1e90ff;
-  }
-
-  /* Mobile menu style */
   #sidemenu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     height: 100vh;
     width: 220px;
     background: #045d9e;
@@ -157,16 +133,14 @@ body {
     align-items: center;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
     border-radius: 0 0 0 12px;
-    transition: right 0.3s ease;
-    z-index: 110;
+    z-index: 2000;
+    display: none;
   }
 
-  /* Slide in when menu is open */
   #sidemenu.open {
-    right: 0;
+    display: flex;
   }
 
-  /* Mobile nav links spacing */
   #sidemenu li {
     margin: 20px 0;
   }
@@ -175,7 +149,6 @@ body {
     font-size: 1.2rem;
   }
 
-  /* Show close icon */
   .close-icon {
     display: block;
     position: absolute;
@@ -183,14 +156,9 @@ body {
     right: 20px;
     font-size: 26px;
     cursor: pointer;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-
-  .close-icon:hover {
-    color: #ff4757;
   }
 }
+
 
 /* About Section */
 .about-section {
@@ -225,7 +193,7 @@ body {
   width: 100%;
   max-width: 350px;
   border-radius: 15px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.4s ease;
   cursor: pointer;
 }
@@ -300,7 +268,7 @@ body {
   background: #0096c7;
   color: white;
   border-color: #0077b6;
-  box-shadow: 0 4px 15px rgba(0,150,199,0.4);
+  box-shadow: 0 4px 15px rgba(0, 150, 199, 0.4);
 }
 
 /* Tab content */
@@ -329,7 +297,7 @@ body {
   padding: 8px 18px;
   border-radius: 25px;
   font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0,119,182,0.4);
+  box-shadow: 0 2px 8px rgba(0, 119, 182, 0.4);
   transition: background-color 0.3s ease;
   user-select: none;
 }
@@ -371,6 +339,7 @@ body {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -483,6 +452,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
+
   .service-card {
     max-width: 100%;
   }
@@ -576,8 +546,10 @@ body {
 
 /* Project title */
 .layer h3 {
-  font-size: 1.3rem;      /* smaller */
-  margin-bottom: 8px;     /* less space */
+  font-size: 1.3rem;
+  /* smaller */
+  margin-bottom: 8px;
+  /* less space */
   font-weight: 600;
   user-select: none;
   line-height: 1.2;
@@ -585,17 +557,22 @@ body {
 
 /* Project description */
 .layer p {
-  font-size: 0.9rem;      /* smaller */
+  font-size: 0.9rem;
+  /* smaller */
   line-height: 1.3;
-  margin-bottom: 16px;    /* a bit more spacing for breathing room */
-  color: #e0e0e0;         /* softer color for readability */
+  margin-bottom: 16px;
+  /* a bit more spacing for breathing room */
+  color: #e0e0e0;
+  /* softer color for readability */
   user-select: none;
 }
 
 /* Link icon */
 .layer a {
-  font-size: 1.4rem;      /* smaller icon */
-  padding: 8px 12px;      /* slightly smaller padding */
+  font-size: 1.4rem;
+  /* smaller icon */
+  padding: 8px 12px;
+  /* slightly smaller padding */
   border-radius: 50%;
   color: #fff;
   border: 2px solid #fff;
@@ -650,7 +627,8 @@ body {
   align-items: flex-start;
 }
 
-.contact-left, .contact-right {
+.contact-left,
+.contact-right {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
@@ -660,7 +638,8 @@ body {
   transition: transform 0.3s ease;
 }
 
-.contact-left:hover, .contact-right:hover {
+.contact-left:hover,
+.contact-right:hover {
   transform: translateY(-5px);
 }
 
@@ -749,24 +728,33 @@ body {
   color: green;
 }
 
-/* WhatsApp Floating Button */
 .whatsapp-button {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
+  bottom: 20px;
+  right: 20px;
   background: #25d366;
   color: white;
   font-size: 1.8rem;
-  padding: 16px;
-  border-radius: 50%;
+  padding: 14px;
+  border-radius: 60%;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 3000;
   transition: transform 0.3s ease;
 }
 
 .whatsapp-button:hover {
   transform: scale(1.1);
   background: #1ebe57;
+}
+
+/* Make sure no overlap with sidemenu on mobile */
+@media (max-width: 768px) {
+  .whatsapp-button {
+    right: 15px;
+    bottom: 15px;
+    font-size: 1.5rem;
+    padding: 14px;
+  }
 }
 
 /* Footer */
@@ -779,20 +767,20 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .contact-section .row {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center; /* Center items horizontally */
-  }
-
   .contact-left,
   .contact-right {
-    width: 100%;
-    max-width: 500px; /* Ensures consistent width */
+    width: 95%;
+    max-width: 500px;
+  }
+
+  .contact-right input,
+  .contact-right textarea {
+    font-size: 0.95rem;
+    padding: 14px;
   }
 
   .btn.btn2 {
-    width: 100%;
-    text-align: center;
+    font-size: 1rem;
+    padding: 12px 30px;
   }
 }
