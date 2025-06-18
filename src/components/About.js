@@ -95,7 +95,7 @@ const About = () => {
               hidden={activeTab !== 'education'}
             >
               <ul className="education-list">
-                <li><span>2018 - 2021</span><br />B.Sc in Computer Science, Udai Pratap College</li>
+                <li><span>2018 - 2021</span><br />Bachelor of Science (BSc), Udai Pratap College</li>
                 <li><span>2017 - 2018</span><br />Senior Secondary (XII), Saraswati Vidya Mandir Inter College</li>
                 <li><span>2015 - 2016</span><br />Higher Secondary (X), Saraswati Vidya Mandir Inter College</li>
               </ul>
