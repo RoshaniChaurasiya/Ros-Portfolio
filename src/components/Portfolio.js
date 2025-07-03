@@ -1,19 +1,26 @@
 // src/components/Portfolio.js
 import React from 'react';
-import Ucode from '../Images/Ucode.jpg';
+import Pearl from '../Images/Ucode.jpg';
+import Backlinks from '../Images/Backlinks.jpg';
 import Home from '../Images/Home.jpg';
-import Shopping from '../Images/Shopping.jpg';
-import Weather from '../Images/Weather.jpg';
+import linked from '../Images/office.jpg';
+import ToDo from '../Images/ToDo.webp';
 import Tic from '../Images/Tic-tac.jpg';
-import Note from '../Images/notes.jpg';
 
 const projects = [
   {
-    image: Ucode,
+    image: Pearl,
     alt: 'Pearl Academy Project',
     title: 'Pearl Academy Project',
     description: 'Students participate in live online lessons, interacting in real time with experienced teachers and peers.',
     link: 'https://www.pearlacademy.com/',
+  },
+  {
+    image: Backlinks,
+    alt: 'Backlinks Project',
+    title: 'Backlinks',
+    description: 'A platform for digital marketers to exchange backlinks and improve SEO.',
+    link: 'https://www.backlinkexchange.com/',
   },
   {
     image: Home,
@@ -23,18 +30,18 @@ const projects = [
     link: 'https://currycares.com',
   },
   {
-    image: Note,
-    alt: 'Backlinks Project',
-    title: 'Backlinks',
-    description: 'A platform for digital marketers to exchange backlinks and improve SEO.',
-    link: 'https://www.backlinkexchange.com/',
+    image: linked,
+    alt: '360linked Project',
+    title: '360linked Project',
+    description: 'A mobile-first platform for managing projects, assets, and vendors with AI insights.',
+    link: 'https://360linked.com/'
   },
   {
-    image: Weather,
-    alt: 'Weather App',
-    title: 'Weather App',
-    description: 'Real-time forecasts, current temperatures, and weather alerts.',
-    link: 'https://apps-weathers.netlify.app/',
+    image: ToDo,
+    alt: 'ToDo App',
+    title: 'ToDo App',
+    description: 'A task management app to add, edit, search, and organize your daily tasks efficiently.',
+    link: 'https://todos-solutions-app.netlify.app/',
   },
   {
     image: Tic,
@@ -42,13 +49,6 @@ const projects = [
     title: 'Tic Tac Toe Game',
     description: 'A modern interface for the classic game — play with friends or improve your strategy.',
     link: 'https://ros-tic-tac-toe.netlify.app/',
-  },
-  {
-    image: Shopping,
-    alt: 'E-Commerce ShopEase',
-    title: 'E-Commerce ShopEase',
-    description: 'Browse a wide product range, enjoy secure payments, and get fast delivery.',
-    link: 'https://18-shop-ease.netlify.app/',
   },
 ];
 

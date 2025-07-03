@@ -5,7 +5,7 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('skills');
 
   const skills = [
-    "JavaScript", "React.js", "API",  "Redux", "Next.js", " HTML5", "CSS3", "SCSS", "Bootstrap", "Material UI", "Git", "Responsive Design"
+    "JavaScript", "React.js", "Redux", "Next.js", "API", " HTML5", "CSS3", "Bootstrap", "Material UI", "Git","Wix Velo", "Responsive Design"
   ];
 
   return (
