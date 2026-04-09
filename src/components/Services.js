@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
+import '../styles/Services.css';
 
-const Services = () => {
+const Services = memo(() => {
   return (
     <section id="services" className="services-section">
       <div className="container">
@@ -38,6 +39,7 @@ const Services = () => {
       </div>
     </section>
   );
-};
+});
 
+Services.displayName = 'Services';
 export default Services;

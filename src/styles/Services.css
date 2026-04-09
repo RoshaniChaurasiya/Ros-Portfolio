@@ -1,0 +1,103 @@
+/* Services Section */
+.services-section {
+  padding: var(--spacing-4xl) var(--spacing-lg);
+  background-color: #ffffff;
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.services-section .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Section Title */
+.sub-title-services {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-2xl);
+  color: var(--primary-blue);
+  border-bottom: 4px solid var(--secondary-blue);
+  display: inline-block;
+  padding-bottom: var(--spacing-xs);
+  user-select: none;
+}
+
+/* Services List - Flex Grid */
+.services-list {
+  display: flex;
+  gap: var(--spacing-xl);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Each Service Card */
+.service-card {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 20px rgba(0, 150, 199, 0.15);
+  padding: var(--spacing-xl);
+  max-width: 320px;
+  flex: 1 1 300px;
+  transition: all var(--transition-slow);
+  cursor: pointer;
+}
+
+.service-card:hover,
+.service-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 150, 199, 0.3);
+}
+
+.service-card:hover .service-icon,
+.service-card:focus .service-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Service Icon */
+.service-icon {
+  font-size: 4rem;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-lg);
+  transition: transform var(--transition-normal);
+}
+
+/* Service Title */
+.service-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-md);
+  color: #023e8a;
+}
+
+/* Service Description */
+.service-card p {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--text-light);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-section {
+    padding: 60px var(--spacing-md);
+  }
+
+  .services-list {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+
+  .service-card {
+    max-width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .sub-title-services {
+    font-size: 2.2rem;
+  }
+}

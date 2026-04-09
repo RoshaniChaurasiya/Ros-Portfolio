@@ -1,11 +1,11 @@
 // src/components/Portfolio.js
-import React from 'react';
+import React, { memo } from 'react';
+import '../styles/Portfolio.css';
 import Pearl from '../Images/Ucode.jpg';
-import Backlinks from '../Images/Backlinks.jpg';
+import Website from '../Images/website.jpg';
 import Home from '../Images/Home.jpg';
 import linked from '../Images/office.jpg';
 import ToDo from '../Images/ToDo.webp';
-import Tic from '../Images/Tic-tac.jpg';
 
 const projects = [
   {
@@ -16,11 +16,11 @@ const projects = [
     link: 'https://www.pearlacademy.com/',
   },
   {
-    image: Backlinks,
-    alt: 'Backlinks Project',
-    title: 'Backlinks',
-    description: 'A platform for digital marketers to exchange backlinks and improve SEO.',
-    link: 'https://www.backlinkexchange.com/',
+    image: Website,
+    alt: 'Mayora Website',
+    title: 'Mayora Website',
+    description: 'Mayora Infotech provides groundbreaking technological solutions tailored to businesses across various sizes and sectors.',
+    link: 'https://mayora-website.vercel.app/',
   },
   {
     image: Home,
@@ -42,40 +42,58 @@ const projects = [
     title: 'ToDo App',
     description: 'A task management app to add, edit, search, and organize your daily tasks efficiently.',
     link: 'https://todos-solutions-app.netlify.app/',
-  },
-  {
-    image: Tic,
-    alt: 'Tic Tac Toe Game',
-    title: 'Tic Tac Toe Game',
-    description: 'A modern interface for the classic game — play with friends or improve your strategy.',
-    link: 'https://ros-tic-tac-toe.netlify.app/',
-  },
+  }
 ];
 
-const Portfolio = () => {
+// Lazy loaded portfolio card component
+const PortfolioCard = memo(({ project, index }) => {
+  return (
+    <figure
+      key={index}
+      className="work"
+      role="img"
+      aria-label={`${project.title} - ${project.description}`}
+    >
+      <img 
+        src={project.image} 
+        alt={project.alt}
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption className="layer">
+        <h3>{project.title}</h3>
+        <p>{project.description}</p>
+        <a 
+          href={project.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          aria-label={`View ${project.title} live demo`}
+        >
+          <i className="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+      </figcaption>
+    </figure>
+  );
+});
+
+PortfolioCard.displayName = 'PortfolioCard';
+
+const Portfolio = memo(() => {
   return (
     <section id="portfolio" className="portfolio-section">
       <div className="container">
         <h1 className="sub-title-portfolio">My Work</h1>
-        <p className="portfolio-text">(Hover over any project and click the icon to view the live demo.)</p>
+        <p className="portfolio-text">Click any project card to view the live demo</p>
 
         <div className="work-list">
           {projects.map((project, index) => (
-            <figure key={index} className="work">
-              <img src={project.image} alt={project.alt} />
-              <figcaption className="layer">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-              </figcaption>
-            </figure>
+            <PortfolioCard key={index} project={project} index={index} />
           ))}
         </div>
       </div>
     </section>
   );
-};
+});
 
+Portfolio.displayName = 'Portfolio';
 export default Portfolio;
