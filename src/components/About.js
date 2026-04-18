@@ -14,15 +14,11 @@ const About = memo(() => {
     "React.js",
     "Next.js",
     "Redux",
-    "REST API Integration",
-    "HTML5",
-    "CSS3",
+    "API Integration",
+    "CSS",
     "Bootstrap",
     "Tailwind CSS",
-    "Material UI",
-    "Wix Velo",
-    "Git",
-    "Responsive Web Design"
+    "Git"
   ];
 
   return (
@@ -50,22 +46,24 @@ const About = memo(() => {
             <ul className="about-list">
               <li>
                 <strong>I’m Roshani Chaurasiya</strong>, a Frontend Developer with
-                <strong> 2.6 years of experience</strong> building modern and scalable web applications.
+                <strong> 2.6 years of experience</strong> building modern,
+                responsive, and scalable web applications.
               </li>
 
               <li>
                 Experienced in developing applications using
-                <strong> React.js, Next.js, and JavaScript</strong> with focus on performance and clean architecture.
+                <strong> React.js, Next.js, and JavaScript</strong> with a strong
+                focus on reusable components and performance.
               </li>
 
               <li>
                 Skilled in <strong>API integration, responsive UI development,
-                component-based architecture, and modern UI frameworks</strong>.
+                Redux state management, and modern CSS frameworks</strong>.
               </li>
 
               <li>
-                Passionate about building pixel-perfect interfaces and learning
-                new frontend technologies.
+                Comfortable collaborating with teams using
+                <strong> Git-based workflows</strong> to ship high-quality frontend features.
               </li>
             </ul>
           </div>

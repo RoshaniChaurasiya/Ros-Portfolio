@@ -12,11 +12,11 @@ const Header = memo(() => {
     if (typedElement.current && !typedInstance.current) {
       typedInstance.current = new Typed(typedElement.current, {
         strings: [
-          "Software Developer",
           "Frontend Developer",
-          "React Developer",
-          "UI Developer",
-          "HTML Developer",
+          "React.js Developer",
+          "Next.js Developer",
+          "JavaScript Developer",
+          "UI Engineer",
         ],
         typeSpeed: 90,
         startDelay: 300,
@@ -103,6 +103,11 @@ const Header = memo(() => {
           <h2 className="typed-intro">
             and I am a <span ref={typedElement} id="element"></span>
           </h2>
+          <p>
+            Frontend developer with 2.6 years of experience building responsive
+            and scalable web apps using React.js, Next.js, JavaScript, Redux,
+            APIs, CSS, Bootstrap, Tailwind CSS, and Git.
+          </p>
         </div>
       </div>
     </header>

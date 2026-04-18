@@ -149,16 +149,6 @@
   .work {
     aspect-ratio: auto;
   }
-  
-  .layer {
-    opacity: 1;
-    transform: translateY(0);
-    background: rgba(0, 119, 182, 0.92);
-  }
-  
-  .work:active {
-    transform: scale(0.98);
-  }
 }
 
 /* Responsive */
