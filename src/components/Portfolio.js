@@ -5,7 +5,7 @@ import Pearl from '../Images/Ucode.jpg';
 import Website from '../Images/website.jpg';
 import Home from '../Images/Home.jpg';
 import linked from '../Images/office.jpg';
-import ToDo from '../Images/ToDo.webp';
+import Chat from '../Images/chat-bot.jpg';
 
 const projects = [
   {
@@ -37,11 +37,11 @@ const projects = [
     link: 'https://360linked.com/'
   },
   {
-    image: ToDo,
-    alt: 'ToDo App',
-    title: 'ToDo App',
-    description: 'A task management app to add, edit, search, and organize your daily tasks efficiently.',
-    link: 'https://todos-solutions-app.netlify.app/',
+    image: Chat,
+    alt: 'Chat Bot App',
+    title: 'Chat Bot App',
+    description: 'An AI-powered chat bot for just about anything talk with as boyfriend.',
+    link: 'https://chat-bot-sage-seven.vercel.app/',
   }
 ];
 

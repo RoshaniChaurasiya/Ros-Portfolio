@@ -10,14 +10,18 @@ const About = memo(() => {
   }, []);
 
   const skills = [
-    "JavaScript",
     "React.js",
     "Next.js",
+    "JavaScript",
+    "TypeScript",
     "Redux",
     "API Integration",
     "CSS",
     "Bootstrap",
-    "Tailwind CSS",
+    "Tailwind",
+    "HTML",
+    "Wix Velo",
+    "GenAI",
     "Git"
   ];
 
