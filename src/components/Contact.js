@@ -1,35 +1,57 @@
-import React, { useRef, useState, useCallback, memo } from 'react';
-import { sendForm } from '@emailjs/browser';
-import Resume from '../Images/Roshani Resume.pdf';
-import '../styles/Contact.css';
+import React, { useRef, useState, useCallback, memo } from "react";
+import { sendForm } from "@emailjs/browser";
+import { profile } from "../data/profile";
+import "../styles/Contact.css";
+
+const contactLinks = [
+  {
+    icon: "fa-solid fa-envelope",
+    label: profile.email,
+    href: `mailto:${profile.email}`
+  },
+  {
+    icon: "fa-solid fa-phone",
+    label: profile.phone,
+    href: profile.phoneHref
+  },
+  {
+    icon: "fa-solid fa-globe",
+    label: "roshani-portfolio.netlify.app",
+    href: profile.portfolio
+  },
+  {
+    icon: "fa-brands fa-linkedin",
+    label: "LinkedIn",
+    href: profile.linkedIn
+  }
+];
 
 const Contact = memo(() => {
   const form = useRef();
-  const [statusMessage, setStatusMessage] = useState('');
+  const [statusMessage, setStatusMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
-  // Validate form inputs
   const validateForm = useCallback(() => {
     const newErrors = {};
-    const nameInput = form.current?.elements['from_name'];
-    const emailInput = form.current?.elements['reply_to'];
-    const messageInput = form.current?.elements['message'];
+    const nameInput = form.current?.elements["from_name"];
+    const emailInput = form.current?.elements["reply_to"];
+    const messageInput = form.current?.elements["message"];
 
     if (!nameInput?.value.trim()) {
-      newErrors.name = 'Name is required';
+      newErrors.name = "Name is required";
     }
-    
+
     if (!emailInput?.value.trim()) {
-      newErrors.email = 'Email is required';
+      newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-      newErrors.email = 'Please enter a valid email';
+      newErrors.email = "Please enter a valid email";
     }
-    
+
     if (!messageInput?.value.trim()) {
-      newErrors.message = 'Message is required';
+      newErrors.message = "Message is required";
     } else if (messageInput.value.trim().length < 10) {
-      newErrors.message = 'Message must be at least 10 characters';
+      newErrors.message = "Message must be at least 10 characters";
     }
 
     setErrors(newErrors);
@@ -38,31 +60,31 @@ const Contact = memo(() => {
 
   const sendEmail = useCallback((e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
-      setStatusMessage('Please fix the errors in the form');
+      setStatusMessage("Please fix the errors in the form");
       return;
     }
 
     setLoading(true);
-    setStatusMessage('');
+    setStatusMessage("");
     setErrors({});
 
     sendForm(
-      'service_qlw4q1f',
-      'template_mwrkjx3',
+      "service_qlw4q1f",
+      "template_mwrkjx3",
       form.current,
-      'GOokHLGNl-ddpGY8u'
+      "GOokHLGNl-ddpGY8u"
     )
       .then(() => {
-        setStatusMessage('✓ Message sent successfully! I\'ll get back to you soon.');
+        setStatusMessage("Success: Message sent successfully! I'll get back to you soon.");
         form.current.reset();
         setLoading(false);
-        setTimeout(() => setStatusMessage(''), 5000);
+        setTimeout(() => setStatusMessage(""), 5000);
       })
       .catch((error) => {
-        console.error('Email Error:', error);
-        setStatusMessage('✗ Failed to send message. Please try again or contact me directly.');
+        console.error("Email Error:", error);
+        setStatusMessage("Error: Failed to send message. Please try again or contact me directly.");
         setLoading(false);
       });
   }, [validateForm]);
@@ -74,35 +96,35 @@ const Contact = memo(() => {
           <div className="contact-left">
             <h1 className="sub-title-contact">Get In Touch</h1>
             <div className="contact-info">
-              <p>
-                <i className="fa-solid fa-envelope"></i>
-                <a href="mailto:roshni.chaurasiya2111@gmail.com">roshni.chaurasiya2111@gmail.com</a>
-              </p>
-              <p>
-                <i className="fa-solid fa-phone"></i>
-                <a href="tel:+918881901986">+91 88819 01986</a>
-              </p>
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/roshani-chaurasiya-4318532a4"
-                  target="_blank"
-                  rel="noreferrer"
-                  title="Visit LinkedIn profile"
-                >
-                  <i className="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-              </p>
+              {contactLinks.map((item) => (
+                <p key={item.label}>
+                  <i className={item.icon} aria-hidden="true"></i>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <span>{item.label}</span>
+                  )}
+                </p>
+              ))}
             </div>
-            <a
-              href={Resume}
-              target="_blank"
-              rel="noreferrer"
-              download="Roshani Resume.pdf"
-              className="btn btn2"
-              aria-label="Download resume"
-            >
-              <i className="fa-solid fa-download"></i> Download Resume
-            </a>
+            <div className="contact-actions">
+              <a
+                href={profile.resume}
+                target="_blank"
+                rel="noreferrer"
+                download="RoshaniResume.pdf"
+                className="btn btn2"
+                aria-label="Download resume"
+              >
+                <i className="fa-solid fa-download"></i> Download Resume
+              </a>
+            </div>
           </div>
 
           <div className="contact-right">
@@ -114,7 +136,7 @@ const Contact = memo(() => {
                   placeholder="Enter your name"
                   aria-label="Your Name"
                   disabled={loading}
-                  onFocus={() => setErrors({ ...errors, name: '' })}
+                  onFocus={() => setErrors({ ...errors, name: "" })}
                 />
                 {errors.name && <span className="error-message">{errors.name}</span>}
               </div>
@@ -126,7 +148,7 @@ const Contact = memo(() => {
                   placeholder="Enter your email"
                   aria-label="Your Email"
                   disabled={loading}
-                  onFocus={() => setErrors({ ...errors, email: '' })}
+                  onFocus={() => setErrors({ ...errors, email: "" })}
                 />
                 {errors.email && <span className="error-message">{errors.email}</span>}
               </div>
@@ -138,7 +160,7 @@ const Contact = memo(() => {
                   placeholder="Write your message here..."
                   disabled={loading}
                   minLength="10"
-                  onFocus={() => setErrors({ ...errors, message: '' })}
+                  onFocus={() => setErrors({ ...errors, message: "" })}
                   aria-label="Your Message"
                 ></textarea>
                 {errors.message && <span className="error-message">{errors.message}</span>}
@@ -157,7 +179,7 @@ const Contact = memo(() => {
               </button>
 
               {statusMessage && (
-                <p className={`status-message ${statusMessage.includes("✓") ? "status-success" : "status-error"}`}>
+                <p className={`status-message ${statusMessage.startsWith("Success") ? "status-success" : "status-error"}`}>
                   {statusMessage}
                 </p>
               )}
@@ -167,7 +189,7 @@ const Contact = memo(() => {
       </div>
 
       <footer className="copyright">
-        <p>© 2026 Portfolio. All Rights Reserved.</p>
+        <p>Copyright 2026 Portfolio. All Rights Reserved.</p>
       </footer>
 
       <a
@@ -184,5 +206,5 @@ const Contact = memo(() => {
   );
 });
 
-Contact.displayName = 'Contact';
+Contact.displayName = "Contact";
 export default Contact;

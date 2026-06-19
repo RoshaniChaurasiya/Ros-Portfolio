@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback, memo } from 'react';
 import Typed from 'typed.js';
 import Logo from '../Images/logo.jpeg';
+import { profile } from '../data/profile';
 import '../styles/Header.css';
 
 const Header = memo(() => {
@@ -11,13 +12,7 @@ const Header = memo(() => {
   useEffect(() => {
     if (typedElement.current && !typedInstance.current) {
       typedInstance.current = new Typed(typedElement.current, {
-        strings: [
-          "Frontend Developer",
-          "React.js Developer",
-          "Next.js Developer",
-          "JavaScript Developer",
-          "UI Engineer",
-        ],
+        strings: profile.typedRoles,
         typeSpeed: 90,
         startDelay: 300,
         backSpeed: 50,
@@ -99,15 +94,11 @@ const Header = memo(() => {
 
       <div className="container">
         <div className="header-content">
-          <h1>Hi, I am <span className="name-highlight">Roshani</span></h1>
+          <h1>Hi, I am <span className="name-highlight">{profile.name}</span></h1>
           <h2 className="typed-intro">
             and I am a <span ref={typedElement} id="element"></span>
           </h2>
-          <p>
-            Frontend developer with 2.6 years of experience building responsive
-            and scalable web apps using React.js, Next.js, JavaScript, Redux,
-            APIs, CSS, Bootstrap, Tailwind CSS, and Git.
-          </p>
+          <p className="hero-summary">{profile.summary}</p>
         </div>
       </div>
     </header>

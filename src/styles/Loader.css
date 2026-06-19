@@ -16,7 +16,8 @@
   width: 12px;
   height: 12px;
   border-radius: var(--radius-full);
-  background: var(--gradient-primary);
+  background: linear-gradient(135deg, var(--accent-gold), var(--tertiary-blue));
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.3);
   animation: bounce 1.4s ease-in-out infinite both;
 }
 

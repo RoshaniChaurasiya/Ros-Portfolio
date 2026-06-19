@@ -3,15 +3,15 @@
   position: fixed;
   bottom: var(--spacing-xl);
   left: var(--spacing-xl);
-  background: var(--gradient-primary);
-  color: white;
+  background: linear-gradient(135deg, var(--accent-gold), var(--tertiary-blue));
+  color: #06111f;
   border: none;
   border-radius: var(--radius-full);
   width: 50px;
   height: 50px;
   font-size: 1.2rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.3);
+  box-shadow: 0 12px 28px rgba(34, 211, 238, 0.24);
   transition: all var(--transition-normal);
   z-index: 1000;
   display: flex;
@@ -22,8 +22,8 @@
 .scroll-to-top:hover,
 .scroll-to-top:focus {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
-  background: linear-gradient(135deg, var(--primary-blue-dark), var(--primary-blue));
+  box-shadow: 0 16px 34px rgba(248, 214, 109, 0.24);
+  background: linear-gradient(135deg, var(--tertiary-blue), var(--accent-gold));
 }
 
 .scroll-to-top:active {
