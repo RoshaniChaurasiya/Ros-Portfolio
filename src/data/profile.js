@@ -15,8 +15,7 @@ export const profile = {
     "React.js Developer",
     "Next.js Developer",
     "JavaScript Developer",
-    "TypeScript Developer",
-    "UI Engineer"
+    "UI Developer"
   ],
   summary:
     "Frontend Developer with 2.6 years of experience building scalable, high-performance web applications using React.js and Next.js, with expertise in Redux, REST API integration, SSR/SSG optimization, and reusable component architecture.",

@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState, useCallback, memo } from 'react';
 import Typed from 'typed.js';
-import Logo from '../Images/logo.jpeg';
-import { profile } from '../data/profile';
-import '../styles/Header.css';
+import Logo from '../../Images/logo.jpeg';
+import { profile } from '../../data/profile';
+import '../header/Header.css';
 
 const Header = memo(() => {
   const typedElement = useRef(null);

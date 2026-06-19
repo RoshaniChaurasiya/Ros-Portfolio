@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, memo } from 'react';
-import '../styles/ScrollToTop.css';
+import '../scroller/Scroller.css';
 
 const ScrollToTop = memo(() => {
   const [isVisible, setIsVisible] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useRef, useState, useCallback, memo } from "react";
 import { sendForm } from "@emailjs/browser";
-import { profile } from "../data/profile";
-import "../styles/Contact.css";
+import { profile } from "../../data/profile";
+import "../contact/Contact.css";
 
 const contactLinks = [
   {

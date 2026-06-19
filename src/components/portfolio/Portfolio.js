@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
-import { projects } from '../data/projects';
-import '../styles/Portfolio.css';
+import { projects } from '../../data/projects';
+import '../portfolio/Portfolio.css';
 
 const PortfolioCard = memo(({ project, index }) => {
   return (

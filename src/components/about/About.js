@@ -1,7 +1,7 @@
 import React, { useState, useCallback, memo } from "react";
-import aboutImg from "../Images/About.jpg";
-import { profile } from "../data/profile";
-import "../styles/About.css";
+import aboutImg from "../../Images/About.jpg";
+import { profile } from "../../data/profile";
+import "../about/About.css";
 
 const About = memo(() => {
   const [activeTab, setActiveTab] = useState("skills");

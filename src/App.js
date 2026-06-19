@@ -1,16 +1,16 @@
 // src/App.js
 import React, { Suspense, lazy, memo } from 'react';
-import Header from './components/Header';
-import ScrollToTop from './components/ScrollToTop';
-import Loader from './components/Loader';
+import Header from './components/header/Header.js';
+import ScrollToTop from './components/scroller/Scroller.js';
+import Loader from './components/loader/Loader.js';
 import { useInView } from 'react-intersection-observer';
 import './styles/Global.css'; 
 
 // Lazy load components
-const About = lazy(() => import('./components/About'));
-const Services = lazy(() => import('./components/Services'));
-const Portfolio = lazy(() => import('./components/Portfolio'));
-const Contact = lazy(() => import('./components/Contact'));
+const About = lazy(() => import('./components/about/About.js'));
+const Services = lazy(() => import('./components/services/Services.js'));
+const Portfolio = lazy(() => import('./components/portfolio/Portfolio.js'));
+const Contact = lazy(() => import('./components/contact/Contact.js'));
 
 // Optimized Section Loader with memoization
 const SectionLoader = memo(({ component: Component }) => {
