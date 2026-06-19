@@ -1,7 +1,7 @@
 import Resume from "../Images/RoshaniResume.pdf";
 
 export const profile = {
-  name: "Roshani Chaurasiya",
+  name: "Roshani",
   title: "Frontend Developer",
   email: "roshni.chaurasiya2111@gmail.com",
   phone: "+91 88819 01986",
@@ -51,7 +51,7 @@ export const profile = {
       high-performance web applications using React.js and Next.js.
     </>,
     <>
-      Delivered <strong>3 production applications</strong> serving real users,
+      Delivered 3 production applications serving real users,
       with expertise in Redux state management, REST API integration, SSR/SSG
       optimization, and reusable component architecture.
     </>,

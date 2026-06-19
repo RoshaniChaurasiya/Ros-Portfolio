@@ -1,4 +1,3 @@
-// src/components/Portfolio.js
 import React, { memo } from 'react';
 import { projects } from '../data/projects';
 import '../styles/Portfolio.css';
@@ -20,11 +19,16 @@ const PortfolioCard = memo(({ project, index }) => {
       <figcaption className="layer">
         <h3>{project.title}</h3>
         <p>{project.description}</p>
+        
+        {/* Tech list container */}
         <div className="project-tech-list" aria-label={`${project.title} technologies`}>
-          {project.tech.map((tech) => (
-            <span key={tech}>{tech}</span>
+          {project.tech.map((tech, idx) => (
+            <span key={tech}>
+              {tech}{idx < project.tech.length - 1 ? ' • ' : ''}
+            </span>
           ))}
         </div>
+
         <a
           href={project.link}
           target="_blank"
@@ -32,7 +36,6 @@ const PortfolioCard = memo(({ project, index }) => {
           aria-label={`View ${project.title} live demo`}
           className="project-link"
         >
-          <span>Live Demo</span>
           <i className="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </a>
       </figcaption>
