@@ -86,19 +86,19 @@ export const profile = {
   education: [
     {
       period: "2018 - 2021",
-      title: "BSc",
+      title: "Bachelor of Science(BSc)",
       school: "Udai Pratap College, Varanasi, UP"
     },
     {
       period: "2017 - 2018",
-      title: "XII",
+      title: "Intermediate(XII)",
       school: "SVM Inter College, Varanasi, UP"
     },
     {
       period: "2015 - 2016",
-      title: "X",
+      title: "High School(X)",
       school: "SVM Inter College, Varanasi, UP"
     }
   ],
-  languages: ["Hindi", "English"]
+  languages: ["Hindi - Native", "English - Professional"]
 };

@@ -92,7 +92,11 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   color: #ffffff;
-  background:linear-gradient(135deg, rgba(34, 211, 238, 0.9), rgba(124, 58, 237, 0.9), rgba(255, 92, 138, 0.85));
+  background: linear-gradient(135deg,
+      rgba(15, 23, 42, 0.82),
+      rgba(30, 41, 59, 0.78));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   transform: translateY(22px);
   transition: opacity var(--transition-slow), transform var(--transition-slow);
@@ -115,8 +119,6 @@
   user-select: none;
 }
 
-/* --- Add/Update these specific sections in your CSS --- */
-
 .project-tech-list {
   margin-bottom: var(--spacing-lg);
   font-size: 0.85rem;
@@ -134,18 +136,15 @@
   justify-content: center;
   align-items: center;
   align-self: center;
-  
-  /* FIXED: Changed from fixed 48px circle to responsive pill shape padding */
-  padding: 10px 22px; 
+  padding: 10px 22px;
   height: auto;
   width: auto;
-  gap: 8px; /* Spacing between "Live Demo" text and the icon */
-  
+  gap: 8px;
   border: 1px solid rgba(255, 255, 255, 0.78);
   border-radius: var(--radius-full);
   color: #06111f;
   background: rgba(255, 255, 255, 0.92);
-  font-size: 0.95rem; /* Slightly reduced font size to fit neatly */
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   transition: transform var(--transition-normal), background var(--transition-normal), color var(--transition-normal);
@@ -153,18 +152,18 @@
 }
 
 .layer a span {
-  white-space: nowrap; /* Prevents "Live Demo" from breaking into two lines */
+  white-space: nowrap;
 }
 
 .layer a i {
-  font-size: 0.85rem; /* Makes the external link icon proportionally sized */
+  font-size: 0.85rem;
 }
 
 .layer a:hover,
 .layer a:focus {
   color: #ffffff;
   background: #06111f;
-  transform: scale(1.05) rotate(0deg); /* Kept scale subtle without forcing a weird layout rotation */
+  transform: scale(1.05) rotate(0deg);
 }
 
 .work:hover .layer,
