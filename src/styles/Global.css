@@ -8,6 +8,10 @@
   --accent-gold: #f8d66d;
   --accent-pink: #ff5c8a;
   --background-light: #0f172a;
+  --background-main: #06111f;
+  --background-elevated: rgba(11, 17, 30, 0.88);
+  --background-soft: rgba(15, 23, 42, 0.74);
+  --background-card: rgba(8, 15, 29, 0.82);
   --surface-dark: rgba(15, 23, 42, 0.78);
   --surface-soft: rgba(30, 41, 59, 0.68);
   --surface-hover: rgba(51, 65, 85, 0.78);
@@ -16,10 +20,15 @@
   --text-light: #cbd5e1;
   --text-muted: #94a3b8;
   --text-light-gray: #e5eefc;
+  --text-primary: #f8fafc;
   --border-color: rgba(148, 163, 184, 0.22);
   --shadow-light: rgba(2, 6, 23, 0.24);
   --shadow-medium: rgba(2, 6, 23, 0.36);
   --shadow-dark: rgba(2, 6, 23, 0.55);
+
+  /* Typography */
+  --font-primary: "Inter", "Segoe UI", "Poppins", Arial, sans-serif;
+  --font-heading: "Inter", "Segoe UI", "Poppins", Arial, sans-serif;
 
   /* Gradients */
   --gradient-primary: linear-gradient(135deg, #22d3ee, #7c3aed 52%, #ff5c8a);
@@ -75,13 +84,38 @@ body {
     radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.15), transparent 32%),
     radial-gradient(circle at 88% 12%, rgba(255, 92, 138, 0.14), transparent 30%),
     radial-gradient(circle at 50% 90%, rgba(124, 58, 237, 0.2), transparent 38%),
-    #06111f;
+    var(--background-main);
   background-attachment: fixed;
   color: var(--text-dark);
-  font-family: "Inter", "Segoe UI", "Poppins", Arial, sans-serif;
+  font-family: var(--font-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+p,
+li,
+span,
+a,
+button,
+textarea,
+input {
+  font-family: inherit;
 }
 
 body::before {

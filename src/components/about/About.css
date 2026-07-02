@@ -1,7 +1,7 @@
 /* About Section */
 .about-section {
   padding: var(--spacing-5xl) var(--spacing-lg);
-  background: var(--gradient-about);
+  background: linear-gradient(180deg, rgba(5, 14, 27, 0.98) 0%, rgba(10, 20, 35, 0.96) 100%);
   color: var(--text-dark);
   animation: fadeInUp 0.9s ease forwards;
   opacity: 0;
@@ -69,7 +69,7 @@
   padding: var(--spacing-xl);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-xl);
-  background: var(--surface-dark);
+  background: linear-gradient(145deg, rgba(10, 19, 35, 0.9), rgba(15, 23, 42, 0.82));
   box-shadow: 0 18px 52px var(--shadow-medium);
   backdrop-filter: blur(18px);
 }

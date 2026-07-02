@@ -1,7 +1,7 @@
 /* Portfolio Section */
 #portfolio {
   padding: var(--spacing-4xl) var(--spacing-lg);
-  background: linear-gradient(180deg, #111827 0%, #0f172a 58%, #07111f 100%);
+  background: linear-gradient(180deg, rgba(6, 17, 31, 0.98) 0%, rgba(10, 20, 35, 0.96) 100%);
   color: var(--text-dark);
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
@@ -45,10 +45,21 @@
   overflow: hidden;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  background-color: var(--surface-dark);
+  background: linear-gradient(145deg, rgba(10, 19, 35, 0.88), rgba(15, 23, 42, 0.78));
   box-shadow: 0 18px 46px var(--shadow-medium);
   cursor: pointer;
   transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-normal);
+}
+
+.work::after {
+  content: "";
+  position: absolute;
+  inset: auto -28px -30px auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 214, 109, 0.18), transparent 72%);
+  pointer-events: none;
 }
 
 .work::before {
@@ -92,9 +103,7 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   color: #ffffff;
-  background: linear-gradient(135deg,
-      rgba(15, 23, 42, 0.82),
-      rgba(30, 41, 59, 0.78));
+  background: linear-gradient(135deg, rgba(8, 15, 29, 0.92), rgba(30, 41, 59, 0.82));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   opacity: 0;

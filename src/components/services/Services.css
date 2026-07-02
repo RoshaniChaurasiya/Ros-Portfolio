@@ -1,7 +1,7 @@
 /* Services Section */
 .services-section {
   padding: var(--spacing-4xl) var(--spacing-lg);
-  background: var(--gradient-section);
+  background: linear-gradient(180deg, rgba(7, 17, 31, 0.98) 0%, rgba(10, 20, 35, 0.96) 100%);
   color: var(--text-dark);
   animation: fadeInUp 1s ease forwards;
   opacity: 0;
@@ -40,12 +40,23 @@
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(145deg, rgba(30, 41, 59, 0.86), rgba(15, 23, 42, 0.74)),
+    linear-gradient(145deg, rgba(30, 41, 59, 0.88), rgba(15, 23, 42, 0.78)),
     var(--surface-dark);
   box-shadow: 0 18px 48px var(--shadow-medium);
   cursor: pointer;
   transition: transform var(--transition-slow), box-shadow var(--transition-slow), border-color var(--transition-normal);
   backdrop-filter: blur(16px);
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: auto -24px -24px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.16), transparent 70%);
+  pointer-events: none;
 }
 
 .service-card::before {
